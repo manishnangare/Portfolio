@@ -62,6 +62,7 @@ main {
 .parallax {
     pointer-events: none;
     transform: translate(-50%,-50%);
+    transition: 3s cubic-bezier(.02,.51,.33,1.41);
 }
 
 .bg-img {

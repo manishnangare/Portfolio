@@ -7,8 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="Assets/images/MN.jpg" type="image/jpg">
 
     <script src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+
     <title>Manish Nangare</title>
 </head>
 <body>
@@ -32,30 +35,30 @@
 
     <main>
         <div class="vignette"></div>
-        <img src="Assets/images/background.png" data-speedx="0.3" data-speedy="0.3" class="parallax bg-img">
-        <img src="Assets/images/fog_7.png" data-speedx="0.3" data-speedy="0.3" class="parallax fog-7">
-        <img src="Assets/images/mountain_10.png" data-speedx="0.25" data-speedy="0.25" class="parallax mountain-10">
-        <img src="Assets/images/fog_6.png" data-speedx="0.2" data-speedy="0.2" class="parallax fog-6">
-        <img src="Assets/images/mountain_9.png" data-speedx="0.2" data-speedy="0.2" class="parallax mountain-9">
-        <img src="Assets/images/mountain_8.png" data-speedx="0.15" data-speedy="0.15" class="parallax mountain-8">
-        <img src="Assets/images/fog_5.png" data-speedx="0.1" data-speedy="0.1" class="parallax fog-5">
-        <img src="Assets/images/mountain_7.png" data-speedx="0.09" data-speedy="0.09" class="parallax mountain-7">
+        <img src="Assets/images/background.png" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="-100" class="parallax bg-img">
+        <img src="Assets/images/fog_7.png" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="2000" class="parallax fog-7">
+        <img src="Assets/images/mountain_10.png" data-speedx="0.25" data-speedy="0.25" data-speedz="0" data-distance="3000" class="parallax mountain-10">
+        <img src="Assets/images/fog_6.png" data-speedx="0.2" data-speedy="0.2" data-speedz="0" data-distance="3500" class="parallax fog-6">
+        <img src="Assets/images/mountain_9.png" data-speedx="0.2" data-speedy="0.2" data-speedz="0.1" data-distance="4000" class="parallax mountain-9">
+        <img src="Assets/images/mountain_8.png" data-speedx="0.15" data-speedy="0.15" data-speedz="0.15" data-distance="4500" class="parallax mountain-8">
+        <img src="Assets/images/fog_5.png" data-speedx="0.1" data-speedy="0.1" data-speedz="0.15" data-distance="5000" class="parallax fog-5">
+        <img src="Assets/images/mountain_7.png" data-speedx="0.09" data-speedy="0.09" data-speedz="0.2" data-distance="5500" class="parallax mountain-7">
         <div class="text parallax">
             <h2>Manish</h2>
             <h1>Nangare</h1>
         </div>
-        <img src="Assets/images/mountain_6.png" data-speedx="0.08" data-speedy="0.08" class="parallax mountain-6">
-        <img src="Assets/images/fog_4.png" data-speedx="0.08" data-speedy="0.08" class="parallax fog-4">
-        <img src="Assets/images/mountain_5.png" data-speedx="0.07" data-speedy="0.07" class="parallax mountain-5">
-        <img src="Assets/images/fog_3.png" data-speedx="0.06" data-speedy="0.06" class="parallax fog-3">
-        <img src="Assets/images/mountain_4.png" data-speedx="0.05" data-speedy="0.05" class="parallax mountain-4">
-        <img src="Assets/images/mountain_3.png" data-speedx="0.05" data-speedy="0.05" class="parallax mountain-3">
-        <img src="Assets/images/fog_2.png" data-speedx="0.03" data-speedy="0.03" class="parallax fog-2">
-        <img src="Assets/images/mountain_2.png" data-speedx="0.03" data-speedy="0.03" class="parallax mountain-2">
-        <img src="Assets/images/mountain_1.png" data-speedx="0.02" data-speedy="0.02" class="parallax mountain-1">
-        <img src="Assets/images/sun_rays.png" data-speedx="0.02" data-speedy="0.02" class="sun-rays">
-        <img src="Assets/images/black_shadow.png" data-speedx="0.01" data-speedy="0.01"class="black-shadow">
-        <img src="Assets/images/fog_1.png" data-speedx="0.01" data-speedy="0.01" class="parallax fog-1">
+        <img src="Assets/images/mountain_6.png" data-speedx="0.08" data-speedy="0.08" data-speedz="0.25" data-distance="6000" class="parallax mountain-6">
+        <img src="Assets/images/fog_4.png" data-speedx="0.08" data-speedy="0.08" data-speedz="0.25" data-distance="6500" class="parallax fog-4">
+        <img src="Assets/images/mountain_5.png" data-speedx="0.07" data-speedy="0.07" data-speedz="0.3" data-distance="7000" class="parallax mountain-5">
+        <img src="Assets/images/fog_3.png" data-speedx="0.06" data-speedy="0.06" data-speedz="0.32" data-distance="7800" class="parallax fog-3">
+        <img src="Assets/images/mountain_4.png" data-speedx="0.05" data-speedy="0.05" data-speedz="0.4" data-distance="8000" class="parallax mountain-4">
+        <img src="Assets/images/mountain_3.png" data-speedx="0.05" data-speedy="0.05" data-speedz="0.35" data-distance="8200" class="parallax mountain-3">
+        <img src="Assets/images/fog_2.png" data-speedx="0.03" data-speedy="0.03" data-speedz="0.36" data-distance="9500" class="parallax fog-2">
+        <img src="Assets/images/mountain_2.png" data-speedx="0.03" data-speedy="0.03" data-speedz="0.4" data-distance="8000" class="parallax mountain-2">
+        <img src="Assets/images/mountain_1.png" data-speedx="0.02" data-speedy="0.02" data-speedz="0.4" data-distance="10000" class="parallax mountain-1">
+        <img src="Assets/images/sun_rays.png" data-speedx="0.02" data-speedy="0.02" data-speedz="0.45" data-distance="12000" class="sun-rays">
+        <img src="Assets/images/black_shadow.png" data-speedx="0.01" data-speedy="0.01" data-speedz="0.5" data-distance="10500" class="black-shadow">
+        <img src="Assets/images/fog_1.png" data-speedx="0.01" data-speedy="0.01" data-speedz="0.5" data-distance="11000" class="parallax fog-1">
 
     </main>
 </body>
