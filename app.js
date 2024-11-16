@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const navbar = document.querySelector('nav');
         const currentScrollY = window.scrollY;
 
-        if (currentScrollY > lastScrollY) {
+        if (currentScrollY >= lastScrollY && currentScrollY > 10) {
             // Scrolling down
             navbar.style.top = '-100px'; // Hide the navbar
         }
@@ -66,43 +66,67 @@ document.addEventListener('DOMContentLoaded', () => {
         //if(timeline.isActive()) return;
         xValue = e.clientX - window.innerWidth/2;
         yValue = e.clientY - window.innerHeight/2;
-        
-        
-
         update(xValue);
     });
 
+    //Initializing all the elements required in the body.
+    const logo = document.getElementsByClassName('logo');
     const aboutLink = document.getElementById('aboutLink');
+    const skillsLink = document.getElementById('skillsLink');
+    const educationLink = document.getElementById('educationLink');
     const aboutMeWindow = document.getElementsByClassName("aboutMe");
     const infoWindow = document.getElementsByClassName("info");
     const aboutImage = document.getElementsByClassName('aboutImage');
     const helloText = document.getElementById('helloPrint');
     const downArrow = document.getElementsByClassName('downArrow');
     const educationWindow = document.getElementsByClassName('education');
+    const skills = document.getElementsByClassName('skills');
+    const education = document.getElementsByClassName('education');
+    const home = document.getElementById('home');
 
+
+    // Adding onclick events to the navbar buttons.
+
+    logo[0].addEventListener('click', () => {
+       home.scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
+
+    });
 
     aboutLink.addEventListener('click', () => {
        infoWindow[0].scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
 
     });
 
+    skillsLink.addEventListener('click', () => {
+       skills[0].scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
+
+    });
+
+    educationLink.addEventListener('click', () => {
+       education[0].scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
+    });
+
+
     aboutMeWindow[0].addEventListener('mouseover', () => {
-           aboutMeWindow[0].style.backgroundColor = '#d9d9d9';
+           aboutMeWindow[0].style.backgroundColor = '#ffffff';
            aboutMeWindow[0].style.color="black";
            infoWindow[0].style.backgroundColor = 'black';
            aboutImage[0].style.transform= 'translateY(-25vh)';
-           helloText.style.color = '#d9d9d9';
+           helloText.style.color = '#ffffff';
            aboutImage[0].style.border = "#333333 20px solid";
+           aboutImage[0].style.filter = "grayscale(50%)";
         });
 
         aboutMeWindow[0].addEventListener('mouseout', () => {
            aboutMeWindow[0].style.backgroundColor = 'black';
-           aboutMeWindow[0].style.color="#d9d9d9";
-           infoWindow[0].style.backgroundColor = '#d9d9d9';
+           aboutMeWindow[0].style.color="#ffffff";
+           infoWindow[0].style.backgroundColor = '#ffffff';
            aboutImage[0].style.left = '60vw';
            aboutImage[0].style.transform= 'translateY(0)';
            helloText.style.color = 'black';
            aboutImage[0].style.border = "black 20px solid";
+           aboutImage[0].style.filter = "grayscale(80%)";
+
 
 
         });
