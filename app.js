@@ -52,5 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
             );
     });
     */
-    
+
+
+    const aboutLink = document.getElementById('aboutLink');
+    const aboutMeWindow = document.getElementsByClassName("aboutMe");
+    const infoWindow = document.getElementsByClassName("info");
+
+    aboutLink.addEventListener('click', () => {
+       aboutMeWindow[0].scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
+       aboutMeWindow
+    });
+
 });
