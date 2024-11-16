@@ -1,16 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
     const circle = document.querySelector('.customCursor'); // Use querySelector
-
+    const circle2 = document.querySelector('.customCursor2');
     document.addEventListener('mousemove', (event) => {
         const mouseX = event.clientX + window.scrollX - 10;
         const mouseY = event.clientY + window.scrollY - 10;
 
-        if (circle) { // Check if the element exists
+        if (circle && circle2) { // Check if the element exists
+
             circle.style.left = `${mouseX}px`;
             circle.style.top = `${mouseY}px`;
+            circle2.style.left = `${mouseX - 15}px`;
+            circle2.style.top = `${mouseY - 15}px`;
+
         }
     });
+
+
+    let lastScrollY = 0;
+
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('nav');
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY) {
+            // Scrolling down
+            navbar.style.top = '-100px'; // Hide the navbar
+        }
+        else {
+            // Scrolling up
+            navbar.style.top = '0'; // Show the navbar
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
 
     const parallax_el = document.querySelectorAll('.parallax');
 
@@ -44,37 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         update(xValue);
     });
-    
-    /*implementing the start animation using gsap*/
-    /*
-    let timeline = gsap.timeline();
-
-    Array.from(parallax_el)
-        .filter(el => !el.classList.contains("text"))
-        .forEach(el => {
-            timeline.from(
-                el,
-                {
-                    top: `${el.offsetHeight / 2 +  -200}px`,
-                    duration: 3.5,
-                    ease : "power3.out",
-                    delay: index * 0.2 // Adds delay between each element's animation
-
-                },
-                "1"
-            );
-    });
-    */
-
-
 
     const aboutLink = document.getElementById('aboutLink');
     const aboutMeWindow = document.getElementsByClassName("aboutMe");
     const infoWindow = document.getElementsByClassName("info");
     const aboutImage = document.getElementsByClassName('aboutImage');
+    const helloText = document.getElementById('helloPrint');
+    const downArrow = document.getElementsByClassName('downArrow');
+    const educationWindow = document.getElementsByClassName('education');
+
 
     aboutLink.addEventListener('click', () => {
-       aboutMeWindow[0].scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
+       infoWindow[0].scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
 
     });
 
@@ -83,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
            aboutMeWindow[0].style.color="black";
            infoWindow[0].style.backgroundColor = 'black';
            aboutImage[0].style.transform= 'translateY(-25vh)';
+           helloText.style.color = '#d9d9d9';
+           aboutImage[0].style.border = "#333333 20px solid";
         });
 
         aboutMeWindow[0].addEventListener('mouseout', () => {
@@ -91,8 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
            infoWindow[0].style.backgroundColor = '#d9d9d9';
            aboutImage[0].style.left = '60vw';
            aboutImage[0].style.transform= 'translateY(0)';
+           helloText.style.color = 'black';
+           aboutImage[0].style.border = "black 20px solid";
+
+
         });
 
+    downArrow[0].addEventListener('click', () => {
+        educationWindow[0].scrollIntoView( {behavior:"smooth", block:"start", inline:"start"});
+    });
 
 
 
