@@ -1,4 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {    
+document.addEventListener('DOMContentLoaded', () => {
+
+    const circle = document.querySelector('.customCursor'); // Use querySelector
+
+    document.addEventListener('mousemove', (event) => {
+        const mouseX = event.clientX + window.scrollX - 10;
+        const mouseY = event.clientY + window.scrollY - 10;
+
+        if (circle) { // Check if the element exists
+            circle.style.left = `${mouseX}px`;
+            circle.style.top = `${mouseY}px`;
+        }
+    });
+
     const parallax_el = document.querySelectorAll('.parallax');
 
     let xValue = 0,
@@ -54,13 +67,33 @@ document.addEventListener('DOMContentLoaded', () => {
     */
 
 
+
     const aboutLink = document.getElementById('aboutLink');
     const aboutMeWindow = document.getElementsByClassName("aboutMe");
     const infoWindow = document.getElementsByClassName("info");
+    const aboutImage = document.getElementsByClassName('aboutImage');
 
     aboutLink.addEventListener('click', () => {
        aboutMeWindow[0].scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
-       aboutMeWindow
+
     });
+
+    aboutMeWindow[0].addEventListener('mouseover', () => {
+           aboutMeWindow[0].style.backgroundColor = '#d9d9d9';
+           aboutMeWindow[0].style.color="black";
+           infoWindow[0].style.backgroundColor = 'black';
+           aboutImage[0].style.transform= 'translateY(-25vh)';
+        });
+
+        aboutMeWindow[0].addEventListener('mouseout', () => {
+           aboutMeWindow[0].style.backgroundColor = 'black';
+           aboutMeWindow[0].style.color="#d9d9d9";
+           infoWindow[0].style.backgroundColor = '#d9d9d9';
+           aboutImage[0].style.left = '60vw';
+           aboutImage[0].style.transform= 'translateY(0)';
+        });
+
+
+
 
 });
