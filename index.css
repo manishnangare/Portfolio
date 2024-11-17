@@ -97,7 +97,7 @@ header ul {
 
 header ul button {
     text-decoration: none;
-    padding: 0 1.2rem;
+    padding: 0.5rem 1.2rem;
     text-transform: uppercase;
     font-size: 1.1rem;
     font-weight: 500;
@@ -105,6 +105,14 @@ header ul button {
     border: none;
     background: none;
     cursor: none;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+        background-color: rgba(204, 3, 4, 0.9);
+        border : 0;
+        border-radius: 0.5rem;
+        font-weight: bolder;
 }
 
 main {
@@ -408,6 +416,16 @@ main {
     font-weight: bolder;
     font-size: 10vh;
 }
+.educationLevel h1 {
+    padding: 4vh;
+}
+
+.educationLevel h1:hover {
+    background-color: #cc0304;
+    transition: background-color 0.5s ease-in-out;
+    border-radius:30%;
+    color: black;
+}
 
 .education h2 {
     font-weight: bold;
@@ -421,6 +439,14 @@ main {
     padding-bottom: 10vh;
     padding-top: 10vh;
     border-bottom: black 1px solid;
+    filter: blur(0.2vh);
+    transition: all 1s ease-in-out;
+}
+
+.educationLevel:hover {
+    filter: blur(0px);
+    background-color: black;
+    color: white;
 }
 
 .eduDetails {
