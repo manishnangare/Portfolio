@@ -61,7 +61,7 @@ body {
 }
 
 .logo {
-    height: 100px;
+    height: 10vh;
     width: auto;
     transition: all 1s ease-in-out;
 }
