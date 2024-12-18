@@ -74,15 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutLink = document.getElementById('aboutLink');
     const skillsLink = document.getElementById('skillsLink');
     const educationLink = document.getElementById('educationLink');
+    const projectsLink = document.getElementById('projectsLink');
+    const contactLink = document.getElementById('contactLink');
     const aboutMeWindow = document.getElementsByClassName("aboutMe");
     const infoWindow = document.getElementsByClassName("info");
     const aboutImage = document.getElementsByClassName('aboutImage');
     const helloText = document.getElementById('helloPrint');
-    const downArrow = document.getElementsByClassName('downArrow');
     const educationWindow = document.getElementsByClassName('education');
     const skills = document.getElementsByClassName('skills');
     const education = document.getElementsByClassName('education');
     const home = document.getElementById('home');
+    const projects = document.getElementById('projects')
+    const contact = document.getElementById('contact');
 
 
     // Adding onclick events to the navbar buttons.
@@ -105,6 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
     educationLink.addEventListener('click', () => {
        education[0].scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
     });
+
+    projectsLink.addEventListener('click', ()=> {
+       projects.scrollIntoView({behavior:"smooth",block:"start", inline:"start"});
+    });
+
+    contactLink.addEventListener('click', () => {
+        contact.scrollIntoView({behavior:"smooth" , block:"start", inline:"start"});
+    })
 
 
     aboutMeWindow[0].addEventListener('mouseover', () => {
@@ -130,11 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         });
-
-    downArrow[0].addEventListener('click', () => {
-        educationWindow[0].scrollIntoView( {behavior:"smooth", block:"start", inline:"start"});
-    });
-
 
 
 });

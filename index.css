@@ -330,6 +330,7 @@ main {
     scroll-margin-top: -1vh;
     transition: transform 1s ease-in-out;
 }
+
 #helloPrint {
     position: relative;
     font-size: 15vh;
@@ -357,6 +358,10 @@ main {
     border-radius: 10vh;
     transition: transform 1s ease-in-out;
 }
+
+.aboutMe:hover #helloPrint{
+    color: #cc0304;
+}
 .aboutImage {
     background-image: url("./Assets/images/myPic.jpg");
     background-size: cover;
@@ -372,22 +377,50 @@ main {
 
 }
 
-.downArrow {
-    position: relative;
-    background-image: url("./Assets/images/downArrow.jpg");
-    background-size: cover;
-    height: 4vw;
-    width: 4vw;
-    left:46vw;
-    border-radius: 50%;
-    bottom:12vw;
+@media (max-width: 768px) {
+    #helloPrint {
+        font-size: 8vh; /* Smaller font size */
+        padding-left: 2vw;
+    }
 
+    .aboutMe {
+        width: 95%; /* Increase width for small screens */
+        padding: 4%; /* Reduce padding */
+        border-radius: 3vh; /* Smaller border radius */
+    }
+
+    .aboutImage {
+        width: 50vw; /* Make image take more width */
+        height: 30vh; /* Adjust height for mobile */
+        border: #333333 5px solid; /* Thinner border */
+        position: relative;
+        top : 200px;
+        left : 10vw;
+
+    }
 }
 
-.downArrow:hover {
-     border-radius: 50%;
-    border : black 2px solid;
+@media (max-width: 480px) {
+    #helloPrint {
+        font-size: 6vh; /* Further reduce font size */
+        margin-bottom: 2vh;
+    }
 
+    .aboutMe {
+        font-size: 1rem; /* Smaller font size */
+        padding: 3%;
+    }
+
+    .aboutImage {
+        width: 50vw; /* Take full width */
+        height: 30vh;
+        border-radius: 5vw; /* Smaller rounded corners */
+        position: relative;
+        top : 200px;
+        left : 10vw;
+
+
+    }
 }
 
 .education {
@@ -399,6 +432,12 @@ main {
     height: auto;
     scroll-margin-top: -1vh;
     transition: transform 1s ease-in-out;
+
+}
+
+.education-section {
+    display: grid;
+
 }
 
 #eduHeading {
@@ -422,9 +461,9 @@ main {
     padding: 4vh;
 }
 
-.educationLevel h1:hover {
+.educationLevel:hover h1 {
     background-color: #cc0304;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 1s ease-in-out;
     border-radius:30%;
     color: black;
 }
@@ -449,6 +488,8 @@ main {
     filter: blur(0px);
     background-color: black;
     color: white;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .eduDetails {
@@ -462,11 +503,53 @@ main {
 
 }
 
+@media (max-width: 768px) {
+    #eduHeading {
+        font-size: 5vh; /* Smaller heading */
+        margin-bottom: 5vh;
+    }
+
+    .educationLevel {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Align text in center */
+        padding: 3vh 2vw; /* Adjust padding */
+    }
+
+    .educationLevel h1 {
+        font-size: 4.5vh; /* Reduce font size */
+        padding: 10px;
+        margin : 10px;
+    }
+
+    .educationLevel:hover h1 {
+        padding : 10px;
+        margin: 10px;
+        border-radius: 0;
+    }
+
+
+    .education h2 {
+        font-size: 3vh; /* Smaller subheadings */
+    }
+
+    .eduDetails p {
+        font-size: 2vh; /* Reduce paragraph text size */
+    }
+
+    .education {
+        padding-bottom: 3vh;
+    }
+}
+
 .skills {
     width: 100vw;
     height: 100vh;
-    padding-left: 5vw;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-bottom: 20vh;
+    padding-top: 5vh;
     margin-top: 10vh;
+    margin-bottom: 50vh;
     transition: all .5s ease-in-out;
 
 }
@@ -484,4 +567,291 @@ main {
     border-radius: 50%;
 
 }
+
+.skills-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Exactly two cards per row */
+  gap: 20px;
+  padding: 20px;
+}
+
+.skill-card {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: black;
+    color: white;
+}
+
+
+.skill-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.skill-card:hover h2 {
+    color:white;
+}
+
+.skill-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skill-images img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.small-img {
+    height: 500px;
+    width: auto;
+}
+
+.skill-images img:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-section {
+    grid-template-columns: 1fr; /* One card per row for smaller screens */
+  }
+
+  .skill-card {
+    padding: 15px;
+  }
+
+  .skill-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .skill-images img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .education-section {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Project Card */
+
+#projects h1 {
+    position: relative;
+    font-size: 15vh;
+    font-weight: bolder;
+    top : 5vh;
+    left : 5vw;
+    border-bottom: black 4px solid;
+    border-left: black 1px solid;
+    padding-left :  3vw;
+    padding-bottom: 1vw;
+    border-radius: 50%;
+    margin-bottom: 20vh;
+}
+
+.project-container {
+
+
+}
+.project-card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+
+    filter: blur(0px);
+    background-color: black;
+    color: white;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover h2 {
+    color: white;
+}
+
+.project-card:hover .btn{
+    background-color: #cc0304;
+    color: black;
+}
+
+
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+/* Project Content */
+.project-title {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #000000;
+}
+
+.project-description {
+    font-size: 1rem;
+    padding: 0 15px;
+    color: #555;
+}
+
+.project-tech {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 10px 0;
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#projects .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#projects .btn:hover {
+    color: #000000;
+    background-color: #cc0304;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    #projects {
+        position: relative;
+        top: 150vh;
+    }
+}
+
+#contact {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#contact .contact-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+#contact h1 {
+  position: relative;
+    font-size: 12vh;
+    font-weight: bolder;
+    padding-left: 30vw;
+    padding-right: 10vw;
+    padding-bottom: 5vh;
+    width: 80vw;
+    left: -50vw;
+    border-right: black 3px solid;
+    border-top: black 3px solid;
+    border-radius: 50%;
+}
+
+#contact p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 30px;
+}
+
+.social-links h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.social-links a {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.social-links a:hover {
+    color: #000000;
+    font-weight: bold;
+    background-color: #cc0304;
+}
+
+#footer {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#footer .container {
+  max-width: 800px;
+  margin: auto;
+}
+
+#footer p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+#footer strong {
+  font-weight: bold;
+}
+
+
 
