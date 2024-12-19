@@ -11,330 +11,354 @@
 
     <script src="./app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script>
+        function checkDevice() {
+      const isDesktop = window.innerWidth >= 1024;
+      if (!isDesktop) {
+        document.body.innerHTML = `
+          <h1>Sorry, this website is only accessible on desktop devices.</h1>
+        `;
+      }
+    }
+
+    // Run the check on load
+    checkDevice();
+
+    // Optional: Re-run the check on window resize
+    window.addEventListener('resize', checkDevice);
+    </script>
 
     <title>Manish Nangare</title>
 </head>
 <body>
-    <div class="customCursor"> </div>
-    <div class="customCursor2"> </div>
 
-    <header>
-        <nav>
-            <img src="./Assets/images/MN.png" alt="Manish Nangare" class="logo">
-            <ul>
-                <li>
-                    <button  id="aboutLink">About Me</button>
-                </li>
-                <li>
-                    <button  id="educationLink">Education</button>
-                </li>
-                <li>
-                    <button id="skillsLink">Skills</button>
-                </li>
-                <li>
-                    <button id="projectsLink">Projects</button>
-                </li>
-                <li>
-                    <button id="contactLink">Contact</button>
-                </li>
-                
-            </ul>
-        </nav>
-    </header>
+        <div id="desktop-content">
 
-    <main id="home">
-        <div class="vignette"></div>
-        <img src="Assets/images/background.png" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="-100" class="parallax bg-img">
-        <img src="Assets/images/fog_7.png" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="2000" class="parallax fog-7">
-        <img src="Assets/images/mountain_10.png" data-speedx="0.25" data-speedy="0.25" data-speedz="0" data-distance="3000" class="parallax mountain-10">
-        <img src="Assets/images/fog_6.png" data-speedx="0.2" data-speedy="0.2" data-speedz="0" data-distance="3500" class="parallax fog-6">
-        <img src="Assets/images/mountain_9.png" data-speedx="0.2" data-speedy="0.2" data-speedz="0.1" data-distance="4000" class="parallax mountain-9">
-        <img src="Assets/images/mountain_8.png" data-speedx="0.15" data-speedy="0.15" data-speedz="0.15" data-distance="4500" class="parallax mountain-8">
-        <img src="Assets/images/fog_5.png" data-speedx="0.1" data-speedy="0.1" data-speedz="0.15" data-distance="5000" class="parallax fog-5">
-        <img src="Assets/images/mountain_7.png" data-speedx="0.09" data-speedy="0.09" data-speedz="0.2" data-distance="5500" class="parallax mountain-7">
-        <div class="text parallax">
-            <h2>Manish</h2>
-            <h1>Nangare</h1>
-        </div>
-        <img src="Assets/images/mountain_6.png" data-speedx="0.08" data-speedy="0.08" data-speedz="0.25" data-distance="6000" class="parallax mountain-6">
-        <img src="Assets/images/fog_4.png" data-speedx="0.08" data-speedy="0.08" data-speedz="0.25" data-distance="6500" class="parallax fog-4">
-        <img src="Assets/images/mountain_5.png" data-speedx="0.07" data-speedy="0.07" data-speedz="0.3" data-distance="7000" class="parallax mountain-5">
-        <img src="Assets/images/fog_3.png" data-speedx="0.06" data-speedy="0.06" data-speedz="0.32" data-distance="7800" class="parallax fog-3">
-        <img src="Assets/images/mountain_4.png" data-speedx="0.05" data-speedy="0.05" data-speedz="0.4" data-distance="8000" class="parallax mountain-4">
-        <img src="Assets/images/mountain_3.png" data-speedx="0.05" data-speedy="0.05" data-speedz="0.35" data-distance="8200" class="parallax mountain-3">
-        <img src="Assets/images/fog_2.png" data-speedx="0.03" data-speedy="0.03" data-speedz="0.36" data-distance="9500" class="parallax fog-2">
-        <img src="Assets/images/mountain_2.png" data-speedx="0.03" data-speedy="0.03" data-speedz="0.4" data-distance="8000" class="parallax mountain-2">
-        <img src="Assets/images/mountain_1.png" data-speedx="0.02" data-speedy="0.02" data-speedz="0.4" data-distance="10000" class="parallax mountain-1">
-        <img src="Assets/images/sun_rays.png" data-speedx="0.02" data-speedy="0.02" data-speedz="0.45" data-distance="12000" class="sun-rays">
-        <img src="Assets/images/black_shadow.png" data-speedx="0.01" data-speedy="0.01" data-speedz="0.5" data-distance="10500" class="black-shadow">
-        <img src="Assets/images/fog_1.png" data-speedx="0.01" data-speedy="0.01" data-speedz="0.5" data-distance="11000" class="parallax fog-1">
+        <div class="customCursor"> </div>
+        <div class="customCursor2"> </div>
 
-    </main>
-    <section class="info">
-        <h1 id="helloPrint">Hello</h1>
+        <header>
+            <nav>
+                <img src="./Assets/images/MN.png" alt="Manish Nangare" class="logo">
+                <ul>
+                    <li>
+                        <button  id="aboutLink">About Me</button>
+                    </li>
+                    <li>
+                        <button  id="educationLink">Education</button>
+                    </li>
+                    <li>
+                        <button id="skillsLink">Skills</button>
+                    </li>
+                    <li>
+                        <button id="projectsLink">Projects</button>
+                    </li>
+                    <li>
+                        <button id="contactLink">Contact</button>
+                    </li>
 
-        <div class="aboutMe">
-            <h1>About Me</h1>
-            <p>Hi, I am Manish Nangare, I am currently a student of Computer Science and engineering at Vidyavardhaka College of Engineering, Mysore.
-                I have been passionate about Computer Science and Software development since high school.
-                My learning journey started with a simple "Hello World" program in the language C++, and I have come a long
-                way since then. I am passionate about Artificial Intelligence, Quantum Computing,  Machine Learning, Full stack development and Game development.</p>
-        </div>
+                </ul>
+            </nav>
+        </header>
 
-        <div class="aboutImage">
-
-        </div>
-
-
-    </section>
-
-
-    <section class="education">
-        <h1 id = "eduHeading">Education</h1>
-        <div class="education-section">
-            <div class="educationLevel">
-                <h1>2024</h1>
-                <div class="eduDetails">
-                    <h2>Bachelor of Computer Science and Engineering</h2>
-                    <p>Current pursuing my Bachelor's of Engineering in <b>Computer Science and Engineering</b>
-                    from Vidyavardhaka College of Engineering with a <b>CGPA of 9.27</b>.</p>
-                </div>
+        <main id="home">
+            <div class="vignette"></div>
+            <img src="Assets/images/background.png" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="-100" class="parallax bg-img">
+            <img src="Assets/images/fog_7.png" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="2000" class="parallax fog-7">
+            <img src="Assets/images/mountain_10.png" data-speedx="0.25" data-speedy="0.25" data-speedz="0" data-distance="3000" class="parallax mountain-10">
+            <img src="Assets/images/fog_6.png" data-speedx="0.2" data-speedy="0.2" data-speedz="0" data-distance="3500" class="parallax fog-6">
+            <img src="Assets/images/mountain_9.png" data-speedx="0.2" data-speedy="0.2" data-speedz="0.1" data-distance="4000" class="parallax mountain-9">
+            <img src="Assets/images/mountain_8.png" data-speedx="0.15" data-speedy="0.15" data-speedz="0.15" data-distance="4500" class="parallax mountain-8">
+            <img src="Assets/images/fog_5.png" data-speedx="0.1" data-speedy="0.1" data-speedz="0.15" data-distance="5000" class="parallax fog-5">
+            <img src="Assets/images/mountain_7.png" data-speedx="0.09" data-speedy="0.09" data-speedz="0.2" data-distance="5500" class="parallax mountain-7">
+            <div class="text parallax">
+                <h2>Manish</h2>
+                <h1>Nangare</h1>
             </div>
-            <div class="educationLevel">
-                <h1>2020</h1>
-                <div class="eduDetails">
-                    <h2>Higher Secondary Education</h2>
-                    <p>I completed higher secondary education from <b>Atomic Energy Central School, Mysore </b> in the major
-                        subjects Physics, Chemistry, Mathematics and Computer Science. I achieve a percentage of <b>89.4</b> in class 12
-                        from Central Board of Technical Education, Delhi.</p>
-                </div>
-            </div>
-            <div class="educationLevel">
-                <h1>2018</h1>
-                <div class="eduDetails">
-                    <h2>Secondary Education</h2>
-                    <p>I completed secondary education from <b>Atomic Energy Central School, Mysore </b>.
-                    I achieve a percentage of <b>81.4</b> in class 10 from Central Board of Secondary Education, Delhi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <img src="Assets/images/mountain_6.png" data-speedx="0.08" data-speedy="0.08" data-speedz="0.25" data-distance="6000" class="parallax mountain-6">
+            <img src="Assets/images/fog_4.png" data-speedx="0.08" data-speedy="0.08" data-speedz="0.25" data-distance="6500" class="parallax fog-4">
+            <img src="Assets/images/mountain_5.png" data-speedx="0.07" data-speedy="0.07" data-speedz="0.3" data-distance="7000" class="parallax mountain-5">
+            <img src="Assets/images/fog_3.png" data-speedx="0.06" data-speedy="0.06" data-speedz="0.32" data-distance="7800" class="parallax fog-3">
+            <img src="Assets/images/mountain_4.png" data-speedx="0.05" data-speedy="0.05" data-speedz="0.4" data-distance="8000" class="parallax mountain-4">
+            <img src="Assets/images/mountain_3.png" data-speedx="0.05" data-speedy="0.05" data-speedz="0.35" data-distance="8200" class="parallax mountain-3">
+            <img src="Assets/images/fog_2.png" data-speedx="0.03" data-speedy="0.03" data-speedz="0.36" data-distance="9500" class="parallax fog-2">
+            <img src="Assets/images/mountain_2.png" data-speedx="0.03" data-speedy="0.03" data-speedz="0.4" data-distance="8000" class="parallax mountain-2">
+            <img src="Assets/images/mountain_1.png" data-speedx="0.02" data-speedy="0.02" data-speedz="0.4" data-distance="10000" class="parallax mountain-1">
+            <img src="Assets/images/sun_rays.png" data-speedx="0.02" data-speedy="0.02" data-speedz="0.45" data-distance="12000" class="sun-rays">
+            <img src="Assets/images/black_shadow.png" data-speedx="0.01" data-speedy="0.01" data-speedz="0.5" data-distance="10500" class="black-shadow">
+            <img src="Assets/images/fog_1.png" data-speedx="0.01" data-speedy="0.01" data-speedz="0.5" data-distance="11000" class="parallax fog-1">
 
-    <section class="skills">
-        <h1 class="skillsHeading">Skills</h1>
-        <div class="skills-section">
-            <div class="skill-card">
-                <h2>Web Development</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/htmlLogo.png" alt="HTML5">
-                    <img src="./Assets/images/cssLogo.png" alt="CSS3">
-                    <img src="./Assets/images/jsLogo.png" alt="JavaScript">
-                    <img src="./Assets/images/bootstrapLogo.png" alt="Bootstrap">
-                    <img src="./Assets/images/jqueryLogo.png" alt="jQuery">
-                    <img src="./Assets/images/ajaxLogo.png" alt="AJAX">
-                </div>
+        </main>
+        <section class="info">
+            <h1 id="helloPrint">Hello</h1>
+
+            <div class="aboutMe">
+                <h1>About Me</h1>
+                <p>Hi, I am Manish Nangare, I am currently a student of Computer Science and engineering at Vidyavardhaka College of Engineering, Mysore.
+                    I have been passionate about Computer Science and Software development since high school.
+                    My learning journey started with a simple "Hello World" program in the language C++, and I have come a long
+                    way since then. I am passionate about Artificial Intelligence, Quantum Computing,  Machine Learning, Full stack development and Game development.</p>
             </div>
 
-            <div class="skill-card">
-                <h2>Programming Languages(Advanced)</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/cLogo.png" alt="C">
-                    <img src="./Assets/images/cppLogo.png" alt="C++">
+            <div class="aboutImage">
+
+            </div>
+
+
+        </section>
+
+
+        <section class="education">
+            <h1 id = "eduHeading">Education</h1>
+            <div class="education-section">
+                <div class="educationLevel">
+                    <h1>2024</h1>
+                    <div class="eduDetails">
+                        <h2>Bachelor of Computer Science and Engineering</h2>
+                        <p>Current pursuing my Bachelor's of Engineering in <b>Computer Science and Engineering</b>
+                        from Vidyavardhaka College of Engineering with a <b>CGPA of 9.27</b>.</p>
+                    </div>
+                </div>
+                <div class="educationLevel">
+                    <h1>2020</h1>
+                    <div class="eduDetails">
+                        <h2>Higher Secondary Education</h2>
+                        <p>I completed higher secondary education from <b>Atomic Energy Central School, Mysore </b> in the major
+                            subjects Physics, Chemistry, Mathematics and Computer Science. I achieve a percentage of <b>89.4</b> in class 12
+                            from Central Board of Technical Education, Delhi.</p>
+                    </div>
+                </div>
+                <div class="educationLevel">
+                    <h1>2018</h1>
+                    <div class="eduDetails">
+                        <h2>Secondary Education</h2>
+                        <p>I completed secondary education from <b>Atomic Energy Central School, Mysore </b>.
+                        I achieve a percentage of <b>81.4</b> in class 10 from Central Board of Secondary Education, Delhi.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <section class="skills">
+            <h1 class="skillsHeading">Skills</h1>
+            <div class="skills-section">
+                <div class="skill-card">
+                    <h2>Web Development</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/htmlLogo.png" alt="HTML5">
+                        <img src="./Assets/images/cssLogo.png" alt="CSS3">
+                        <img src="./Assets/images/jsLogo.png" alt="JavaScript">
+                        <img src="./Assets/images/bootstrapLogo.png" alt="Bootstrap">
+                        <img src="./Assets/images/jqueryLogo.png" alt="jQuery">
+                        <img src="./Assets/images/ajaxLogo.png" alt="AJAX">
+                    </div>
+                </div>
 
-        <div class="skills-section">
-            <div class="skill-card">
-                <h2>Programming Languages(Basic)</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/javaLogo.png" alt="Java">
-                    <img src="./Assets/images/pythonLogo.png" alt="Python">
-                    <img src="./Assets/images/phpLogo.png" alt="PHP">
-                    <img src="./Assets/images/csharpLogo.png" alt="C#">
+                <div class="skill-card">
+                    <h2>Programming Languages(Advanced)</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/cLogo.png" alt="C">
+                        <img src="./Assets/images/cppLogo.png" alt="C++">
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-card">
-                <h2>Artificial Intelligence & Machine Learning</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/tensorflowLogo.png" alt="Tensorflow">
-                    <img src="./Assets/images/kerasLogo.png" alt="Keras">
-                    <img src="./Assets/images/opencvLogo.png" alt="OpenCV">
+
+            <div class="skills-section">
+                <div class="skill-card">
+                    <h2>Programming Languages(Basic)</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/javaLogo.png" alt="Java">
+                        <img src="./Assets/images/pythonLogo.png" alt="Python">
+                        <img src="./Assets/images/phpLogo.png" alt="PHP">
+                        <img src="./Assets/images/csharpLogo.png" alt="C#">
+                    </div>
                 </div>
-            </div>
-        </div>
 
-
-        <div class="skills-section">
-            <div class="skill-card">
-                <h2>Data Science</h2>
-                <div class="skill-images">
-                    <img class="small-img" src="./Assets/images/numpyLogo.png" alt="Numpy">
-                    <img class="small-img" src="./Assets/images/pandasLogo.png" alt="Pandas">
-                    <img src="./Assets/images/matplotlibLogo.png" alt="Matplotlib">
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <h2>Game Programming</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/unityLogo.png" alt="Unity">
-                    <img src="./Assets/images/unrealLogo.png" alt="Unreal Engine">
-                </div>
-            </div>
-        </div>
-
-
-        <div class="skills-section">
-            <div class="skill-card">
-                <h2>Quantum Computing</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/tensorflowquantumLogo.png" alt="Tensorflow Quantum">
-                    <img src="./Assets/images/pennylaneLogo.png" alt="Pennylane">
-                    <img src="./Assets/images/cirqLogo.png" alt="Cirq">
+                <div class="skill-card">
+                    <h2>Artificial Intelligence & Machine Learning</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/tensorflowLogo.png" alt="Tensorflow">
+                        <img src="./Assets/images/kerasLogo.png" alt="Keras">
+                        <img src="./Assets/images/opencvLogo.png" alt="OpenCV">
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-card">
-                <h2>Hardware Skills</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/arduinoLogo.png" alt="Arduino">
-                    <img src="./Assets/images/stmLogo.png" alt="STMicroelectronics">
-                    <img src="./Assets/images/iotLogo.png" alt="IOT">
+
+            <div class="skills-section">
+                <div class="skill-card">
+                    <h2>Data Science</h2>
+                    <div class="skill-images">
+                        <img class="small-img" src="./Assets/images/numpyLogo.png" alt="Numpy">
+                        <img class="small-img" src="./Assets/images/pandasLogo.png" alt="Pandas">
+                        <img src="./Assets/images/matplotlibLogo.png" alt="Matplotlib">
+                    </div>
                 </div>
-            </div>
-        </div>
 
-
-
-        <div class="skills-section">
-            <div class="skill-card">
-                <h2>Devops Tools</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/gitLogo.png" alt="Git">
-                    <img src="./Assets/images/githubLogo.png" alt="GitHub">
-                    <img src="./Assets/images/dockerLogo.png" alt="Docker">
-                    <img src="./Assets/images/jenkinsLogo.png" alt="Jenkins">
-
-                </div>
-            </div>
-            <div class="skill-card">
-                <h2>Other tools and Software</h2>
-                <div class="skill-images">
-                    <img src="./Assets/images/vscodeLogo.png" alt="Visual Studio code">
-                    <img src="./Assets/images/pycharmLogo.png" alt="pyCharm IDE">
-                    <img src="./Assets/images/atomLogo.png" alt="Atom">
-                    <img src="./Assets/images/canvaLogo.png" alt="Canva">
-                    <img src="./Assets/images/androidstudioLogo.png" alt="Android Studio">
-                    <img src="./Assets/images/matlabLogo.png" alt="Matlab">
+                <div class="skill-card">
+                    <h2>Game Programming</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/unityLogo.png" alt="Unity">
+                        <img src="./Assets/images/unrealLogo.png" alt="Unreal Engine">
+                    </div>
                 </div>
             </div>
 
-        </div>
-    </section>
 
-    <section id="projects">
-        <h1 class="section-title">My Projects</h1>
-        <div class="project-container">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="./Assets/images/paddy_image.jpg" alt="Project 2" class="project-image">
-                <h2 class="project-title">Quantum based Paddy disease classification</h2>
-                <p class="project-description">
-                    The project focuses on the early detection of sheath blight and blast disease in paddy crops using Quantum machine learning (QML)
-                    with model accuracy of 99.4%.
-                    By analyzing images of healthy and infected paddy leaves, the model can accurately predict the presence of disease.
-                    Early detection enables timely interventions, helping to reduce crop losses, improve rice yield, and contribute to food security.
-                    Given the rising global hunger and the dependence of more than 90% of the world’s population on agriculture, there is a pressing
-                    need for accurate, early disease detection.
-                    Leveraging machine learning and computer vision for automated plant disease identification provides farmers with real-time
-                    predictions and actionable insights.
-                    This proactive approach helps optimize resource use, minimize crop losses, and ensure sustainable agricultural practices
-                </p>
-                <p class="project-tech">Technologies: Python, Cirq, Tensorflow, Tensorflow Quantum, keras, OpenCV, Google Colab, Pandas,
-                    NumPy, Matplotlib, Scikit-learn and Git</p>
-                <div class="project-links">
-                    <!--<a href="#" target="_blank" class="btn">Live Demo</a>-->
-                    <a href="#" target="_blank" class="btn">Source Code</a>
+            <div class="skills-section">
+                <div class="skill-card">
+                    <h2>Quantum Computing</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/tensorflowquantumLogo.png" alt="Tensorflow Quantum">
+                        <img src="./Assets/images/pennylaneLogo.png" alt="Pennylane">
+                        <img src="./Assets/images/cirqLogo.png" alt="Cirq">
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h2>Hardware Skills</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/arduinoLogo.png" alt="Arduino">
+                        <img src="./Assets/images/stmLogo.png" alt="STMicroelectronics">
+                        <img src="./Assets/images/iotLogo.png" alt="IOT">
+                    </div>
                 </div>
             </div>
 
-            <!-- Project 2 -->
 
-            <div class="project-card">
-                <img src="./Assets/images/eye_image.jpg" alt="Project 1" class="project-image">
-                <h2 class="project-title">MediScan : Eye disease classification</h2>
-                <p class="project-description">
-                    The Eye Disease Classification project is designed to develop an automated system that uses
-                    deep learning models to classify fundus images (retinal images) into various categories, such
-                    as diabetic retinopathy, glaucoma, cataracts, and normal eye conditions. The project aims
-                    to provide healthcare professionals with an AI-powered tool to assist in diagnosing common
-                    eye diseases more efficiently and accurately. This tool will enable the detection of eye diseases
-                    at earlier stages, helping reduce the risk of irreversible vision loss.
-                </p>
-                <p class="project-tech">Technologies: HTML, CSS, Python, Tensorflow, keras, Jupyter Notebook, OpenCV, Flask, Pandas,
-                    NumPy, Matplotlib, Scikit-learn and Git</p>
-                <div class="project-links">
-                    <!--<a href="#" target="_blank" class="btn">Live Demo</a>-->
-                    <a href="#" target="_blank" class="btn">Source Code</a>
+
+            <div class="skills-section">
+                <div class="skill-card">
+                    <h2>Devops Tools</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/gitLogo.png" alt="Git">
+                        <img src="./Assets/images/githubLogo.png" alt="GitHub">
+                        <img src="./Assets/images/dockerLogo.png" alt="Docker">
+                        <img src="./Assets/images/jenkinsLogo.png" alt="Jenkins">
+
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h2>Other tools and Software</h2>
+                    <div class="skill-images">
+                        <img src="./Assets/images/vscodeLogo.png" alt="Visual Studio code">
+                        <img src="./Assets/images/pycharmLogo.png" alt="pyCharm IDE">
+                        <img src="./Assets/images/atomLogo.png" alt="Atom">
+                        <img src="./Assets/images/canvaLogo.png" alt="Canva">
+                        <img src="./Assets/images/androidstudioLogo.png" alt="Android Studio">
+                        <img src="./Assets/images/matlabLogo.png" alt="Matlab">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects">
+            <h1 class="section-title">My Projects</h1>
+            <div class="project-container">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="./Assets/images/paddy_image.jpg" alt="Project 2" class="project-image">
+                    <h2 class="project-title">Quantum based Paddy disease classification</h2>
+                    <p class="project-description">
+                        The project focuses on the early detection of sheath blight and blast disease in paddy crops using Quantum machine learning (QML)
+                        with model accuracy of 99.4%.
+                        By analyzing images of healthy and infected paddy leaves, the model can accurately predict the presence of disease.
+                        Early detection enables timely interventions, helping to reduce crop losses, improve rice yield, and contribute to food security.
+                        Given the rising global hunger and the dependence of more than 90% of the world’s population on agriculture, there is a pressing
+                        need for accurate, early disease detection.
+                        Leveraging machine learning and computer vision for automated plant disease identification provides farmers with real-time
+                        predictions and actionable insights.
+                        This proactive approach helps optimize resource use, minimize crop losses, and ensure sustainable agricultural practices
+                    </p>
+                    <p class="project-tech">Technologies: Python, Cirq, Tensorflow, Tensorflow Quantum, keras, OpenCV, Google Colab, Pandas,
+                        NumPy, Matplotlib, Scikit-learn and Git</p>
+                    <div class="project-links">
+                        <!--<a href="#" target="_blank" class="btn">Live Demo</a>-->
+                        <!--<a href="#" target="_blank" class="btn">Source Code</a>-->
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+
+                <div class="project-card">
+                    <img src="./Assets/images/eye_image.jpg" alt="Project 1" class="project-image">
+                    <h2 class="project-title">MediScan : Eye disease classification</h2>
+                    <p class="project-description">
+                        The Eye Disease Classification project is designed to develop an automated system that uses
+                        deep learning models to classify fundus images (retinal images) into various categories, such
+                        as diabetic retinopathy, glaucoma, cataracts, and normal eye conditions. The project aims
+                        to provide healthcare professionals with an AI-powered tool to assist in diagnosing common
+                        eye diseases more efficiently and accurately. This tool will enable the detection of eye diseases
+                        at earlier stages, helping reduce the risk of irreversible vision loss.
+                    </p>
+                    <p class="project-tech">Technologies: HTML, CSS, Python, Tensorflow, keras, Jupyter Notebook, OpenCV, Flask, Pandas,
+                        NumPy, Matplotlib, Scikit-learn and Git</p>
+                    <div class="project-links">
+                        <!--<a href="#" target="_blank" class="btn">Live Demo</a>-->
+                        <!--<a href="#" target="_blank" class="btn">Source Code</a>-->
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="./Assets/images/classifical_image.jpg" alt="Project 3" class="project-image">
+                    <h2 class="project-title">Classifical: A Refreshingly Simple Social Media Experience</h2>
+                    <p class="project-description">
+                        Classifical is a refreshing take on social media, offering a simple and distraction-free platform to focus
+                        on meaningful connections. It allows you to follow friends, share updates, and send direct messages without
+                        the noise of ads, endless scrolling, or algorithm-driven content. Designed with a clean and intuitive interface,
+                        Classifical brings back the joy of connecting with people who matter most. Whether you're looking to stay in
+                        touch with close friends or reconnect with old ones, this platform provides a minimalistic and purposeful
+                        experience. Rediscover social media the way it was meant to be—focused, clutter-free, and all about genuine
+                        relationships.
+                    </p>
+                    <p class="project-tech">Technologies: PHP, HTML, CSS3, JavaScript, AJAX and MySQL</p>
+                    <div class="project-links">
+                        <!--<a href="#" target="_blank" class="btn">Live Demo</a>-->
+                        <!--<a href="#" target="_blank" class="btn">Source Code</a>-->
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="./Assets/images/classifical_image.jpg" alt="Project 3" class="project-image">
-                <h2 class="project-title">Classifical: A Refreshingly Simple Social Media Experience</h2>
-                <p class="project-description">
-                    Classifical is a refreshing take on social media, offering a simple and distraction-free platform to focus
-                    on meaningful connections. It allows you to follow friends, share updates, and send direct messages without
-                    the noise of ads, endless scrolling, or algorithm-driven content. Designed with a clean and intuitive interface,
-                    Classifical brings back the joy of connecting with people who matter most. Whether you're looking to stay in
-                    touch with close friends or reconnect with old ones, this platform provides a minimalistic and purposeful
-                    experience. Rediscover social media the way it was meant to be—focused, clutter-free, and all about genuine
-                    relationships.
-                </p>
-                <p class="project-tech">Technologies: PHP, HTML, CSS3, JavaScript, AJAX and MySQL</p>
-                <div class="project-links">
-                    <!--<a href="#" target="_blank" class="btn">Live Demo</a>-->
-                    <a href="#" target="_blank" class="btn">Source Code</a>
-                </div>
+        <section id="contact">
+          <div class="contact-container">
+            <h1>Contact Me</h1>
+            <p>Have a question or want to work together? Fill out the form below!</p>
+            <div class="form-container">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeJ8mPJLitXZ5oKYbUGIkMkgZ4i3IJqa56jH9dmMm_SwtB7kw/viewform?usp=header"
+                width="100%"
+                height="600"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0">
+                Loading…
+              </iframe>
             </div>
-        </div>
-    </section>
+            <div class="social-links">
+              <h3>Connect with Me</h3>
+              <a href="https://github.com/manishnangare" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/manish-nangare-1221a7247/" target="_blank">LinkedIn</a>
+              <a href="mailto:nangaremanish@gmail.com">Email</a>
+            </div>
+          </div>
+        </section>
 
-    <section id="contact">
-      <div class="contact-container">
-        <h1>Contact Me</h1>
-        <p>Have a question or want to work together? Fill out the form below!</p>
-        <div class="form-container">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeJ8mPJLitXZ5oKYbUGIkMkgZ4i3IJqa56jH9dmMm_SwtB7kw/viewform?usp=header"
-            width="100%"
-            height="600"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-            Loading…
-          </iframe>
-        </div>
-        <div class="social-links">
-          <h3>Connect with Me</h3>
-          <a href="https://github.com/manishnangare" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/manish-nangare-1221a7247/" target="_blank">LinkedIn</a>
-          <a href="mailto:nangaremanish@gmail.com">Email</a>
-        </div>
-      </div>
-    </section>
+        <section id="footer">
+          <div class="container">
+            <p>© 2024 <strong>Manish Nangare</strong>. All Rights Reserved.</p>
+            <p>Created by <strong>Manish Nangare</strong></p>
+          </div>
+        </section>
 
-    <section id="footer">
-      <div class="container">
-        <p>© 2024 <strong>Manish Nangare</strong>. All Rights Reserved.</p>
-        <p>Created by <strong>Manish Nangare</strong></p>
-      </div>
-    </section>
+    </div>
 
+    <div id="non-desktop-message">
+        <h1>Sorry, this website is only available on desktop devices.</h1>
+    </div>
 
 
 </body>

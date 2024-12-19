@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+
+
+
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -119,12 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     aboutMeWindow[0].addEventListener('mouseover', () => {
-           aboutMeWindow[0].style.backgroundColor = '#ffffff';
+           aboutMeWindow[0].style.backgroundColor = '#fff66e';
            aboutMeWindow[0].style.color="black";
            infoWindow[0].style.backgroundColor = 'black';
            aboutImage[0].style.transform= 'translateY(-25vh)';
            helloText.style.color = '#ffffff';
-           aboutImage[0].style.border = "#333333 20px solid";
+           aboutImage[0].style.border = "#ffffff 20px solid";
            aboutImage[0].style.filter = "grayscale(50%)";
         });
 
@@ -136,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
            aboutImage[0].style.transform= 'translateY(0)';
            helloText.style.color = 'black';
            aboutImage[0].style.border = "black 20px solid";
-           aboutImage[0].style.filter = "grayscale(80%)";
+           aboutImage[0].style.filter = "grayscale(20%)";
 
 
 

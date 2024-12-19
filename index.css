@@ -26,6 +26,30 @@ html {
     scrollbar-color: #333333 #ffffff;
 }
 
+/* Hide the content for non-desktop devices */
+    #desktop-content {
+      display: none;
+    }
+
+    #non-desktop-message {
+      display: none;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    @media (min-width: 1024px) {
+      #desktop-content {
+        display: block;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      #non-desktop-message {
+        display: block;
+      }
+    }
+
 .customCursor {
             position: absolute;
             width: 1vw;
@@ -123,7 +147,7 @@ main {
     width: 100vw;
     position: relative;
     overflow: hidden; /*restricts all the images to the size of main*/
-    filter: grayscale(100%) brightness(80%);
+    filter: grayscale(60%) brightness(80%);
 
 }
 
@@ -320,6 +344,8 @@ main {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7))
 }
 
+
+
 .info {
     background-color: #ffffff;
     position: relative;
@@ -366,14 +392,14 @@ main {
     background-image: url("./Assets/images/myPic.jpg");
     background-size: cover;
     position: relative;
-    top: -30vh;
+    top: -40vh;
     left: 60vw;
     width: 35vw;
-    height: 40vh;
+    height: 60vh;
     border-radius: 10vh;
-    border: #333333 20px solid;
+    border: black 20px solid;
     transition: transform 1s ease-in-out;
-    filter: grayscale(80%);
+    filter: grayscale(50%);
 
 }
 
